@@ -1,39 +1,90 @@
-const WA = 'https://wa.me/393331234567?text=' + encodeURIComponent('Ciao, voglio più clienti e meno sbatti.');
-const cards = [
-  { href: '/ristorazione', title: 'Ristorazione Smart', tag: 'Tavolo Sempre Pieno', items: ['Sito web ultra veloce + Menu QR animato (il cliente inquadra e ordina)', 'Gestionale comande + cucina + asporto/Deliveroo integrato', 'Stampante etichette lotti / scadenze / allergeni AUTOMATICA', 'Prenotazione tavoli con conferma WhatsApp'], result: 'Risultato: +30% di coperti, zero errori in cucina' },
-  { href: '/parrucchieri', title: 'Parrucchieri / Estetisti Smart', tag: 'Agenda Blindata', items: ['App appuntamenti per cliente (iOS/Android) + Sito web', 'Calendario smart che riempie i buchi da solo con IA', 'Magazzino prodotti: ti avvisa quando finisce tinta/shampoo', 'Promemoria automatici WhatsApp'], result: 'Risultato: Zero buchi, -80% no-show, clienti fidelizzati' },
-  { href: '/ferramenta', title: 'Ferramenta / Negozi Smart', tag: 'Nemmeno una vite persa', items: ['Inventario con IA + lettore barcode', 'Sito e-commerce click&collect', 'Cassa smart collegata al magazzino', 'Alert scorte automatici'], result: 'Risultato: Basta perdite, vendi anche di notte' }
+const WA = 'https://wa.me/393331234567?text=' + encodeURIComponent('Ciao, voglio prenotare l onboarding in 24h');
+
+const kpis = [
+  { label: '+30%', sub: 'coperti' },
+  { label: '−80%', sub: 'no-show' },
+  { label: '0', sub: 'buchi' },
+  { label: '24/7', sub: 'vendite' },
 ];
+
+const verticals = [
+  {
+    href: '/ristorazione',
+    icon: '/icons/ristoranti.svg',
+    title: 'RISTORANTI',
+    tag: 'Più coperti, meno no-show.',
+    items: ['+30% coperti in 7 giorni', '−80% no-show automatici', '0 buchi in sala', 'Vendite 24/7'],
+  },
+  {
+    href: '/parrucchieri',
+    icon: '/icons/salon.svg',
+    title: 'HAIR SALON',
+    tag: 'Agenda piena, zero buchi.',
+    items: ['+35% nuovi clienti', '−75% disdette last minute', 'Agenda ottimizzata 24/7', 'Più incassi, meno caos'],
+  },
+  {
+    href: '/ferramenta',
+    icon: '/icons/hardware.svg',
+    title: 'HARDWARE STORE',
+    tag: 'Più clienti, più strumenti.',
+    items: ['+28% traffico in negozio', 'Lead qualificati 24/7', '0 messaggi senza risposta', 'Vendite omnicanale'],
+  },
+];
+
 export default function Home() {
   return (
-    <main>
-      <section className="hero">
-        <div className="badge liquid-glass">Onboarding in 24h · Risultati garantiti</div>
-        <h1>PIÙ CLIENTI MENO SBATTI<span className="grad">IN 7 GIORNI</span></h1>
-        <p className="lead">Strategia data-driven, onboarding in 24h. Pronto in una settimana, senza complessità. Più clienti, meno gestione manuale.</p>
-        <div className="cta-row">
-          <a className="btn-glass btn-wa liquid-glass" href={WA} target="_blank" rel="noreferrer">Parla su WhatsApp</a>
-          <a className="btn-glass btn-ghost liquid-glass" href="/casi-studio">Scopri i casi studio</a>
+    <main className="home-b">
+      <section className="hero-b">
+        <div className="hero-b-left">
+          <div className="badge liquid-glass">Onboarding 24h · Risultati garantiti</div>
+          <h1>
+            PIÙ CLIENTI
+            <br />
+            MENO SBATTI
+            <br />
+            <span className="grad">IN 7 GIORNI</span>
+          </h1>
+          <div className="kpi-pills">
+            {kpis.map((k) => (
+              <div key={k.sub} className="kpi-pill liquid-glass">
+                <span className="kpi-val">{k.label}</span>
+                <span className="kpi-sub">{k.sub}</span>
+              </div>
+            ))}
+          </div>
+          <div className="cta-row-b">
+            <a className="btn-neon liquid-glass" href={WA} target="_blank" rel="noreferrer">
+              Prenota onboarding 24h →
+            </a>
+            <a className="btn-ghost-b liquid-glass" href="/casi-studio">
+              Vedi i risultati reali
+            </a>
+          </div>
         </div>
-      </section>
-      <section className="section">
-        <p className="section-label">3 soluzioni — tutto quello che ti serve</p>
-        <div className="cards">
-          {cards.map((c) => (
-            <a key={c.href} href={c.href} className="card liquid-glass">
-              <div className="icon-orb" />
-              <h3>{c.title}</h3>
-              <div className="tag">“{c.tag}”</div>
-              <ul>{c.items.map((it) => <li key={it}>{it}</li>)}</ul>
-              <div className="result">{c.result}</div>
-              <span className="card-cta">Scrivici</span>
+
+        <div className="hero-b-cards">
+          {verticals.map((v) => (
+            <a key={v.href} href={v.href} className="v-card liquid-glass">
+              <div className="v-icon-wrap liquid-glass">
+                <img src={v.icon} alt="" className="v-icon-img" width={56} height={56} />
+              </div>
+              <h3>{v.title}</h3>
+              <p className="v-tag">{v.tag}</p>
+              <ul>
+                {v.items.map((it) => (
+                  <li key={it}>{it}</li>
+                ))}
+              </ul>
+              <span className="v-more">Scopri di più →</span>
             </a>
           ))}
         </div>
       </section>
-      <section className="guarantee liquid-glass">
-        <h2>Garanzia 14 giorni</h2>
-        <p>Soddisfatto o rimborsato 14 giorni. Senza domande. Lo mettiamo a contratto.</p>
+
+      <section className="guarantee-bar liquid-glass">
+        <span className="g-left">✓ Soddisfatto o rimborsato <strong>14 giorni</strong></span>
+        <span className="g-sep">|</span>
+        <span className="g-right">Zero rischi. Solo risultati.</span>
       </section>
     </main>
   );

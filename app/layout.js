@@ -2,10 +2,10 @@ import './globals.css';
 
 export const metadata = {
   title: 'Mente Locale — Più clienti, meno sbatti in 7 giorni',
-  description: 'Onboarding 24h. Risultati garantiti.',
+  description: 'Onboarding 24h. Risultati garantiti. Ristoranti, saloni e negozi.',
 };
 
-const WA = 'https://wa.me/393331234567?text=' + encodeURIComponent('Ciao, voglio prenotare l onboarding in 24h');
+const WA = 'https://wa.me/393444106229?text=' + encodeURIComponent('Ciao, voglio prenotare l onboarding in 24h');
 const IG = 'https://www.instagram.com/smart.srls.ia?igsi=dG1ncjl6cWhxbDBi&utm_source=qr';
 
 export default function RootLayout({ children }) {
@@ -13,9 +13,6 @@ export default function RootLayout({ children }) {
     <html lang="it">
       <body>
         <div className="bg-scene" />
-        <div className="blob blob-a" />
-        <div className="blob blob-b" />
-        <div className="blob blob-c" />
 
         <header className="nav-wrap">
           <nav className="nav liquid-glass">
@@ -25,13 +22,13 @@ export default function RootLayout({ children }) {
                 alt="Mente Locale"
                 className="logo-img"
                 width={160}
-                height={40}
+                height={44}
               />
             </a>
             <ul className="nav-links">
-              <li><a href="/come-funziona">Strategia</a></li>
-              <li><a href="/servizi">Servizi</a></li>
               <li><a href="/come-funziona">Come funziona</a></li>
+              <li><a href="/servizi">Servizi</a></li>
+              <li><a href="/faq">FAQ</a></li>
               <li><a href="/casi-studio">Case study</a></li>
               <li><a href="/contatti">Chi siamo</a></li>
             </ul>
@@ -57,7 +54,17 @@ export default function RootLayout({ children }) {
               <img src="/icons/instagram.svg" alt="Instagram" width={56} height={56} />
             </a>
           </div>
-          <p style={{ color: 'rgba(255,255,255,0.45)', fontSize: 13 }}>
+          <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: 13, marginBottom: 10 }}>
+            <a href="mailto:mentelocale@gmail.com" style={{ color: 'inherit' }}>mentelocale@gmail.com</a>
+            {' · '}
+            <a href={WA} style={{ color: 'inherit' }}>+39 344 410 6229</a>
+          </p>
+          <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: 12, marginBottom: 8 }}>
+            <a href="/privacy" style={{ color: 'inherit', marginRight: 12 }}>Privacy</a>
+            <a href="/termini" style={{ color: 'inherit', marginRight: 12 }}>Termini</a>
+            <a href="/cookie" style={{ color: 'inherit' }}>Cookie</a>
+          </p>
+          <p style={{ color: 'rgba(255,255,255,0.35)', fontSize: 12 }}>
             © 2026 Mente Locale · Garanzia 14 giorni
           </p>
         </footer>

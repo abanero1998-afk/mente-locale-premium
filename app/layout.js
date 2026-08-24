@@ -21,12 +21,11 @@ export default function RootLayout({ children }) {
           <nav className="nav liquid-glass">
             <a href="/" className="logo-link" aria-label="Mente Locale home">
               <img
-                src="/logo-mente-locale.png"
-                srcSet="/logo-mente-locale.png 1x, /logo-mente-locale@2x.png 2x"
+                src="/logo-mente-locale.svg"
                 alt="Mente Locale"
                 className="logo-img"
-                width={140}
-                height={66}
+                width={160}
+                height={40}
               />
             </a>
             <ul className="nav-links">

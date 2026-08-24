@@ -1,4 +1,4 @@
-const WA = 'https://wa.me/393331234567?text=' + encodeURIComponent('Ciao, voglio prenotare l onboarding in 24h');
+const WA = 'https://wa.me/393444106229?text=' + encodeURIComponent('Ciao, voglio prenotare l onboarding in 24h');
 
 const kpis = [
   { label: '+30%', sub: 'coperti' },

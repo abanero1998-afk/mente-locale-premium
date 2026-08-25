@@ -41,7 +41,6 @@ export default function Page() {
             <article key={p.title} className="product-card liquid-glass">
               <h3>{p.title}</h3>
               <p>{p.desc}</p>
-              <a className="btn-wa-sm liquid-glass" href={WA} target="_blank" rel="noreferrer">Richiedi su WhatsApp →</a>
             </article>
           ))}
         </div>

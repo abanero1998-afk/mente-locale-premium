@@ -22,8 +22,8 @@ export default function RootLayout({ children }) {
                 src="/logo-mente-locale.svg"
                 alt="Mente Locale"
                 className="logo-img"
-                width={140}
-                height={40}
+                width={200}
+                height={64}
               />
             </a>
             <ul className="nav-links">

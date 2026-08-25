@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" fill="none">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="128" y2="128">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.32)"/>
+      <stop offset="55%" stop-color="rgba(255,255,255,0.08)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0.03)"/>
+    </linearGradient>
+    <linearGradient id="rim" x1="0" y1="0" x2="0" y2="128">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.55)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0.1)"/>
+    </linearGradient>
+  </defs>
+  <rect x="6" y="6" width="116" height="116" rx="28" fill="url(#g)" stroke="url(#rim)" stroke-width="1.6"/>
+  <rect x="8" y="8" width="112" height="36" rx="24" fill="rgba(255,255,255,0.12)"/>
+  <path d="M72 36v28.5c0 8.5-6.5 14.5-15.5 14.5S41 73 41 64.5 47.5 50 56.5 50c1.5 0 3 .2 4.3.6V42.2c-1.4-.3-2.8-.5-4.3-.5C42.2 41.7 30 53.2 30 67.5S42.2 93.3 56.5 93.3 83 81.8 83 67.5V52.8c4.2 3.1 9.4 5 15 5.3V43.8c-5.5-.4-10.4-2.8-14.2-6.6C80.8 34.2 76.6 32 72 32v4z" fill="#fff"/>
+  <path d="M72 36v28.5c0 8.5-6.5 14.5-15.5 14.5" stroke="#25F4EE" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M83 52.8c4.2 3.1 9.4 5 15 5.3" stroke="#FE2C55" stroke-width="3" fill="none" stroke-linecap="round"/>
+</svg>

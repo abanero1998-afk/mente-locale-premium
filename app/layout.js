@@ -7,6 +7,7 @@ export const metadata = {
 
 const WA = 'https://wa.me/393444106229?text=' + encodeURIComponent('Ciao, voglio prenotare l onboarding in 24h');
 const IG = 'https://www.instagram.com/smart.srls.ia?igsi=dG1ncjl6cWhxbDBi&utm_source=qr';
+const TT = 'https://www.tiktok.com/@mente.locale0';
 
 export default function RootLayout({ children }) {
   return (
@@ -18,11 +19,12 @@ export default function RootLayout({ children }) {
           <nav className="nav liquid-glass">
             <a href="/" className="logo-link" aria-label="Mente Locale home">
               <img
-                src="/logo-mente-locale.svg"
+                src="/logo-mente-locale.png"
+                srcSet="/logo-mente-locale.png 1x, /logo-mente-locale@2x.png 2x"
                 alt="Mente Locale"
                 className="logo-img"
-                width={160}
-                height={44}
+                width={120}
+                height={40}
               />
             </a>
             <ul className="nav-links">
@@ -33,11 +35,14 @@ export default function RootLayout({ children }) {
               <li><a href="/contatti">Chi siamo</a></li>
             </ul>
             <div className="nav-socials">
-              <a className="nav-icon-btn" href={WA} target="_blank" rel="noreferrer" aria-label="WhatsApp">
+              <a className="nav-icon-btn liquid-glass" href={WA} target="_blank" rel="noreferrer" aria-label="WhatsApp">
                 <img src="/icons/whatsapp.svg" alt="" width={40} height={40} />
               </a>
-              <a className="nav-icon-btn" href={IG} target="_blank" rel="noreferrer" aria-label="Instagram">
+              <a className="nav-icon-btn liquid-glass" href={IG} target="_blank" rel="noreferrer" aria-label="Instagram">
                 <img src="/icons/instagram.svg" alt="" width={40} height={40} />
+              </a>
+              <a className="nav-icon-btn liquid-glass" href={TT} target="_blank" rel="noreferrer" aria-label="TikTok">
+                <img src="/icons/tiktok.svg" alt="" width={40} height={40} />
               </a>
             </div>
           </nav>
@@ -47,11 +52,14 @@ export default function RootLayout({ children }) {
 
         <footer>
           <div className="socials">
-            <a className="social-icon" href={WA} target="_blank" rel="noreferrer" aria-label="WhatsApp">
+            <a className="social-icon liquid-glass" href={WA} target="_blank" rel="noreferrer" aria-label="WhatsApp">
               <img src="/icons/whatsapp.svg" alt="WhatsApp" width={56} height={56} />
             </a>
-            <a className="social-icon" href={IG} target="_blank" rel="noreferrer" aria-label="Instagram">
+            <a className="social-icon liquid-glass" href={IG} target="_blank" rel="noreferrer" aria-label="Instagram">
               <img src="/icons/instagram.svg" alt="Instagram" width={56} height={56} />
+            </a>
+            <a className="social-icon liquid-glass" href={TT} target="_blank" rel="noreferrer" aria-label="TikTok">
+              <img src="/icons/tiktok.svg" alt="TikTok" width={56} height={56} />
             </a>
           </div>
           <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: 13, marginBottom: 10 }}>

@@ -1,4 +1,5 @@
 import './globals.css';
+import './extra.css';
 
 export const metadata = {
   title: 'Mente Locale — Più clienti, meno sbatti in 7 giorni',

@@ -1,5 +1,6 @@
 import './globals.css';
 import './extra.css';
+import LOGO from './logo-data';
 
 export const metadata = {
   title: 'Mente Locale — Più clienti, meno sbatti in 7 giorni',
@@ -22,7 +23,7 @@ export default function RootLayout({ children }) {
           <nav className="nav liquid-glass">
             <a href="/" className="logo-link" aria-label="Mente Locale home">
               <img
-                src="/logo-mente-locale.svg"
+                src={LOGO}
                 alt="Mente Locale"
                 className="logo-img"
                 width={200}

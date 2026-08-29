@@ -9,6 +9,7 @@ const WA = 'https://wa.me/393444106229?text=' + encodeURIComponent('Ciao, voglio
 const IG = 'https://www.instagram.com/smart.srls.ia?igsi=dG1ncjl6cWhxbDBi&utm_source=qr';
 const TT = 'https://www.tiktok.com/@mente.locale0';
 const FB = 'https://www.facebook.com/share/19Q1m2xxHx/?mibextid=wwXIfr';
+const MAIL = 'abanero1998@icloud.com';
 
 export default function RootLayout({ children }) {
   return (
@@ -69,7 +70,7 @@ export default function RootLayout({ children }) {
             </a>
           </div>
           <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: 13, marginBottom: 10 }}>
-            <a href="mailto:mentelocale@gmail.com" style={{ color: 'inherit' }}>mentelocale@gmail.com</a>
+            <a href={'mailto:' + MAIL} style={{ color: 'inherit' }}>{MAIL}</a>
             {' · '}
             <a href={WA} style={{ color: 'inherit' }}>+39 344 410 6229</a>
           </p>

@@ -81,6 +81,31 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="real-data liquid-glass">
+        <p className="rd-kicker">Dati reali, non slide</p>
+        <h2>Numeri presi dai locali, non da un template</h2>
+        <p className="rd-lead">
+          Ogni KPI che vedi (+30% coperti, −80% no-show, agenda senza buchi) arriva da
+          prenotazioni, comande e reminder effettivamente usati. Niente demo vuote:
+          dashboard collegata al tuo flusso WhatsApp e al tuo punto vendita.
+        </p>
+        <div className="rd-grid">
+          <article>
+            <strong>Fonte</strong>
+            <span>Prenotazioni, no-show, scontrini e messaggi del locale</span>
+          </article>
+          <article>
+            <strong>Aggiornamento</strong>
+            <span>Live dopo il go-live, non report una tantum</span>
+          </article>
+          <article>
+            <strong>Controllo</strong>
+            <span>Tu vedi gli stessi numeri che usiamo noi in call</span>
+          </article>
+        </div>
+        <a className="btn-ghost-b liquid-glass" href="/casi-studio">Apri la dashboard risultati</a>
+      </section>
+
       <section className="guarantee-bar liquid-glass">
         <span className="g-left">✓ Soddisfatto o rimborsato <strong>14 giorni</strong></span>
         <span className="g-sep">|</span>

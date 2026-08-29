@@ -1,1 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" fill="none"><defs><linearGradient id="g" x1="0" y1="0" x2="128" y2="128"><stop offset="0%" stop-color="rgba(255,255,255,0.35)"/><stop offset="50%" stop-color="rgba(255,255,255,0.08)"/><stop offset="100%" stop-color="rgba(255,255,255,0.03)"/></linearGradient><linearGradient id="rim" x1="0" y1="0" x2="0" y2="128"><stop offset="0%" stop-color="rgba(255,255,255,0.55)"/><stop offset="100%" stop-color="rgba(255,255,255,0.1)"/></linearGradient></defs><rect x="6" y="6" width="116" height="116" rx="28" fill="url(#g)" stroke="url(#rim)" stroke-width="1.6"/><rect x="8" y="8" width="112" height="36" rx="24" fill="rgba(255,255,255,0.12)"/><g fill="none" stroke="#3b82f6" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M40 70l20-20 8 8-20 20-8-8z"/><path d="M68 48l12-12 12 12-12 12-12-12z"/><path d="M52 82h36"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" fill="none">
+  <defs>
+    <linearGradient id="gh" x1="0" y1="0" x2="128" y2="128">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.34)"/>
+      <stop offset="50%" stop-color="rgba(59,130,246,0.12)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0.04)"/>
+    </linearGradient>
+    <linearGradient id="rh" x1="0" y1="0" x2="0" y2="128">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.6)"/>
+      <stop offset="100%" stop-color="rgba(59,130,246,0.2)"/>
+    </linearGradient>
+  </defs>
+  <rect x="6" y="6" width="116" height="116" rx="30" fill="url(#gh)" stroke="url(#rh)" stroke-width="1.6"/>
+  <rect x="8" y="8" width="112" height="34" rx="24" fill="rgba(255,255,255,0.14)"/>
+  <g fill="none" stroke="#93c5fd" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M46 82l36-36"/>
+    <path d="M76 40l12 12-8 8-12-12 8-8z"/>
+    <path d="M42 74l12 12-6 6c-4 4-12 2-14-4-2-6 2-12 8-14z"/>
+  </g>
+</svg>

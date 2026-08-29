@@ -27,7 +27,7 @@ export default function Page() {
           <p>I corrispettivi e le modalità di pagamento sono definiti nel contratto o nell’offerta accettata. I ritardi di pagamento possono sospendere il servizio.</p>
           <h3 style={{ marginTop: 18 }}>7. Legge applicabile</h3>
           <p>Si applica la legge italiana. Foro competente: quello del domicilio del consumatore se applicabile, altrimenti quello indicato a contratto.</p>
-          <p style={{ marginTop: 20, fontSize: '0.85rem', color: 'rgba(226,232,240,0.55)' }}>Contatti: mentelocale@gmail.com · +39 344 410 6229</p>
+          <p style={{ marginTop: 20, fontSize: '0.85rem', color: 'rgba(226,232,240,0.55)' }}>Contatti: abanero1998@icloud.com · +39 344 410 6229</p>
         </article>
       </div>
     </main>

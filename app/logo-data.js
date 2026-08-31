@@ -1,2 +1,1 @@
-const LOGO = '/logo-outline.png';
-export default LOGO;
+export default "data:image/webp;base64,UklGRrogAABXRUJQVlA4WAoAAAAQAAAALwIA/wAAQUxQSOwbAAA=";

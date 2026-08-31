@@ -1,6 +1,8 @@
 import './globals.css';
 import './extra.css';
 import './card-ristoranti.css';
+import './site-bg.css';
+import SiteBg from './SiteBg';
 import LOGO from './logo-data';
 
 export const metadata = {
@@ -8,7 +10,7 @@ export const metadata = {
   description: 'Onboarding 24h. Risultati garantiti. Ristoranti, saloni e negozi.',
 };
 
-const WA = 'https://wa.me/393444106229?text=' + encodeURIComponent('Ciao, voglio prenotare l onboarding in 24h');
+const WA = 'https://wa.me/393444106229?text=' + encodeURIComponent("Ciao, voglio prenotare l'onboarding in 24h");
 const IG = 'https://www.instagram.com/smart.srls.ia?igsi=dG1ncjl6cWhxbDBi&utm_source=qr';
 const TT = 'https://www.tiktok.com/@mente.locale0';
 const FB = 'https://www.facebook.com/share/19Q1m2xxHx/?mibextid=wwXIfr';
@@ -18,6 +20,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="it">
       <body>
+        <SiteBg />
         <div className="bg-scene" />
         <header className="nav-wrap">
           <nav className="nav liquid-glass">

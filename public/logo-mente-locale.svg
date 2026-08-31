@@ -1,20 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 160" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 200" fill="none" role="img" aria-label="Mente Locale">
   <defs>
-    <filter id="glow" x="-10%" y="-10%" width="120%" height="130%">
-      <feGaussianBlur stdDeviation="1.2" result="b"/>
-      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    <filter id="glow" x="-15%" y="-15%" width="130%" height="140%">
+      <feGaussianBlur stdDeviation="1.6" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
     </filter>
   </defs>
-  <g filter="url(#glow)" fill="none" stroke="#fff" stroke-width="2.6" stroke-linejoin="round">
-    <text x="12" y="78" font-family="Impact, Haettenschweiler, 'Arial Black', sans-serif" font-size="72" letter-spacing="4" stroke-linecap="round">MENTE</text>
-    <text x="12" y="138" font-family="Impact, Haettenschweiler, 'Arial Black', sans-serif" font-size="56" letter-spacing="10" stroke-linecap="round">LOCALE</text>
+  <g filter="url(#glow)" fill="none" stroke="#ffffff" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round">
+    <text x="18" y="88" font-family="Impact, Haettenschweiler, 'Arial Black', sans-serif" font-size="82" letter-spacing="6">MENTE</text>
+    <text x="18" y="168" font-family="Impact, Haettenschweiler, 'Arial Black', sans-serif" font-size="64" letter-spacing="12">LOCALE</text>
   </g>
-  <g fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" opacity="0.9">
-    <path d="M92 80 v16"/>
-    <path d="M210 80 v22"/>
-    <path d="M318 80 v12"/>
-    <path d="M70 140 v10"/>
-    <path d="M200 140 v16"/>
-    <path d="M310 140 v8"/>
+  <g fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" opacity=".92">
+    <path d="M98 92 v18"/>
+    <path d="M228 92 v26"/>
+    <path d="M348 92 v14"/>
+    <path d="M78 172 v12"/>
+    <path d="M218 172 v20"/>
+    <path d="M338 172 v10"/>
+    <path d="M408 172 v16"/>
   </g>
 </svg>

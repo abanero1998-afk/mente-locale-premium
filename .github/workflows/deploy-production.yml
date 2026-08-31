@@ -19,11 +19,22 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
-          cache: npm
+          node-version: 22
 
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
+
+      - name: Check secrets
+        run: |
+          if [ -z "$VERCEL_ORG_ID" ] || [ -z "$VERCEL_PROJECT_ID" ]; then
+            echo "Mancano i secret VERCEL_ORG_ID e VERCEL_PROJECT_ID."
+            echo "GitHub → Settings → Secrets and variables → Actions"
+            exit 1
+          fi
+          if [ -z "${{ secrets.VERCEL_TOKEN }}" ]; then
+            echo "Manca il secret VERCEL_TOKEN."
+            exit 1
+          fi
 
       - name: Pull Vercel env (production)
         run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}

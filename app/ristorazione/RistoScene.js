@@ -45,13 +45,13 @@ export default function RistoScene() {
 
       <div className="rs-head">
         <motion.h2
-          initial={{ clipPath: 'inset(0 100% 0 0)', opacity: 0 }}
-          animate={{ clipPath: 'inset(0 0% 0 0)', opacity: 1 }}
-          transition={{ duration: 0.85 }}
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
         >
           Ristoranti e <em>Locali</em>
         </motion.h2>
-        <p>Il sistema che trasforma tavoli vuoti in incasso garantito</p>
+        <p>Il sistema che trasforma tavoli vuoti in incasso garantito.</p>
       </div>
 
       <div className="rs-stack">
@@ -73,7 +73,7 @@ export default function RistoScene() {
         <GlassCard href="/ristorazione/kds" delay={0.65} className="c3">
           <span className="ico">▦</span>
           <div>
-            <strong>Ordina Online</strong>
+            <strong>Ordina online</strong>
             <small>Delivery 25-35 min · Gratis</small>
             <i className="rs-bar" />
           </div>

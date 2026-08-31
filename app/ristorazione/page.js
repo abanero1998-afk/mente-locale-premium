@@ -1,7 +1,7 @@
-const WA = 'https://wa.me/393444106229?text=' + encodeURIComponent('Ciao, voglio Ristorazione Smart — Tavolo Sempre Pieno');
+const WA = 'https://wa.me/393444106229?text=' + encodeURIComponent('Ciao, voglio Ristoranti e Locali');
 
 export const metadata = {
-  title: 'Ristorazione Smart — Tavolo Sempre Pieno | Mente Locale',
+  title: 'Ristoranti e Locali | Mente Locale',
   description: 'Sala live, carta QR, KDS cucina+bar, magazzino IA e HACCP Pro. Personalizzato sul tuo locale.',
 };
 
@@ -46,9 +46,9 @@ export default function Page() {
   return (
     <main className="service-page service-ristoranti">
       <section className="service-hero">
-        <div className="badge liquid-glass">Ristorazione Smart</div>
-        <h1>Tavolo Sempre Pieno</h1>
-        <p className="service-lead">Dal QR al piatto, senza sbatti. Il cliente inquadra, ordina, paga. La cucina riceve la comanda pulita. Tu riempi i tavoli e tagli gli errori.</p>
+        <div className="badge liquid-glass">Ristoranti e Locali</div>
+        <h1>Tavolo sempre pieno</h1>
+        <p className="service-lead">Il sistema che trasforma tavoli vuoti in incasso garantito. Il cliente inquadra, ordina, paga. La cucina riceve la comanda pulita.</p>
         <div className="kpi-pills service-kpis">
           <div className="kpi-pill liquid-glass"><span className="kpi-val">+30%</span><span className="kpi-sub">coperti</span></div>
           <div className="kpi-pill liquid-glass"><span className="kpi-val">−80%</span><span className="kpi-sub">no-show</span></div>

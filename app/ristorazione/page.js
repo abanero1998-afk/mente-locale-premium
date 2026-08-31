@@ -1,4 +1,3 @@
-import RistoBg from './RistoBg';
 import RistoScene from './RistoScene';
 import './risto-scene.css';
 
@@ -6,7 +5,7 @@ const WA = 'https://wa.me/393444106229?text=' + encodeURIComponent('Ciao, voglio
 
 export const metadata = {
   title: 'Ristoranti e Locali | Mente Locale',
-  description: 'Sala live, carta QR, KDS cucina+bar, magazzino IA e HACCP Pro.',
+  description: 'Sala live, carta QR, KDS cucina e bar, magazzino IA e HACCP Pro.',
 };
 
 const modules = [
@@ -29,7 +28,7 @@ const modules = [
     demo: '/ristorazione/kds.html',
     kicker: '03 · Cucina',
     title: 'KDS CUCINA + BAR',
-    tag: 'Comanda dal tavolo → cucina + bar in 0.3s. Zero carta.',
+    tag: 'Comanda dal tavolo alla cucina e al bar in 0,3 secondi. Zero carta.',
   },
   {
     href: '/ristorazione/magazzino',
@@ -43,11 +42,17 @@ const modules = [
 export default function Page() {
   return (
     <main className="service-page service-ristoranti">
-      <RistoBg />
-      <section className="service-hero" style={{ paddingBottom: 12 }}>
+      <section className="service-hero" style={{ paddingTop: 28, paddingBottom: 8, overflow: 'visible' }}>
         <div className="badge liquid-glass">Ristoranti e Locali</div>
-        <h1>Tavolo sempre pieno</h1>
-        <p className="service-lead">Il sistema che trasforma tavoli vuoti in incasso garantito.</p>
+        <h1>
+          Tavolo sempre
+          <br />
+          pieno
+        </h1>
+        <p className="service-lead">
+          Il sistema che trasforma tavoli vuoti in incasso garantito.
+          Il cliente inquadra, ordina, paga. La cucina riceve la comanda pulita.
+        </p>
       </section>
 
       <div className="products-section">
@@ -57,7 +62,7 @@ export default function Page() {
       <section className="products-section">
         <h2 className="section-title">Ristorazione</h2>
         <p className="service-lead" style={{ marginTop: 8, maxWidth: 640 }}>
-          Personalizziamo ogni cosa in linea al tuo locale perché sono i dettagli che fanno la differenza
+          Personalizziamo ogni dettaglio sul tuo locale: è quello che fa la differenza.
         </p>
         <div className="products-grid">
           {modules.map((p) => (

@@ -21,14 +21,13 @@ export default function RootLayout({ children }) {
     <html lang="it">
       <body>
         <SiteBg />
-        <div className="bg-scene" />
         <header className="nav-wrap">
           <nav className="nav liquid-glass">
             <a href="/" className="logo-link" aria-label="Mente Locale home">
               <img src={LOGO} alt="Mente Locale" className="logo-img" width={200} height={64} />
             </a>
             <a className="wa-prive nav-prive" href={WA} target="_blank" rel="noreferrer">
-              WhatsApp Privé
+              WhatsApp privato
             </a>
           </nav>
         </header>

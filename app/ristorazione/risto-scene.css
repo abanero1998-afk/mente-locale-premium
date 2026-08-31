@@ -1,0 +1,118 @@
+.rs-scene {
+  position: relative;
+  overflow: hidden;
+  border-radius: 28px;
+  margin: 8px 0 36px;
+  padding: 28px 16px 32px;
+  min-height: 420px;
+  background: rgba(5,7,10,0.35);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.rs-aurora {
+  position: absolute; border-radius: 50%; pointer-events: none; z-index: 0;
+}
+.rs-aurora.a1 {
+  width: 280px; height: 280px; top: 8%; left: 8%;
+  background: #00D9FF; filter: blur(90px); opacity: 0.38;
+  animation: rsMove 12s ease-in-out infinite;
+}
+.rs-aurora.a2 {
+  width: 320px; height: 320px; bottom: 0; right: -40px;
+  background: #7B61FF; filter: blur(100px); opacity: 0.34;
+  animation: rsMove 15s ease-in-out infinite reverse;
+}
+@keyframes rsMove {
+  0%,100% { transform: translate(0,0) scale(1); }
+  50% { transform: translate(40px,-24px) scale(1.12); }
+}
+.rs-smoke {
+  position: absolute; border-radius: 50%; pointer-events: none;
+  filter: blur(34px); mix-blend-mode: screen; z-index: 1;
+}
+.rs-smoke.sm1 { width: 180px; height: 180px; left: 12%; top: 30%; background: radial-gradient(circle,#00D9FF,transparent 70%); animation: rsMove 9s ease-in-out infinite; }
+.rs-smoke.sm2 { width: 220px; height: 220px; right: 6%; top: 22%; background: radial-gradient(circle,#7B61FF,transparent 70%); animation: rsMove 11s ease-in-out infinite reverse; }
+.rs-smoke.sm3 { width: 140px; height: 140px; left: 40%; bottom: 8%; background: radial-gradient(circle,rgba(0,217,255,.7),transparent 70%); animation: rsMove 8s ease-in-out infinite; }
+.rs-vignette {
+  position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: radial-gradient(ellipse at center, transparent 40%, rgba(5,7,10,0.55) 100%);
+}
+.rs-dot {
+  position: absolute; border-radius: 50%; z-index: 2; pointer-events: none;
+  filter: blur(0.4px);
+  animation: rsFloat 6s ease-in-out infinite;
+}
+@keyframes rsFloat {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+.rs-head { position: relative; z-index: 3; text-align: left; margin-bottom: 22px; }
+.rs-head h2 {
+  margin: 0;
+  font-family: Outfit, Inter, sans-serif;
+  font-size: clamp(1.7rem, 7vw, 2.5rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+.rs-head h2 em {
+  font-style: normal;
+  background: linear-gradient(90deg, #00D9FF, #7B61FF);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.rs-head p {
+  margin: 8px 0 0;
+  color: rgba(255,255,255,0.62);
+  font-size: 0.95rem;
+  max-width: 420px;
+}
+.rs-cards {
+  position: relative; z-index: 3;
+  display: flex; flex-direction: column; gap: 16px;
+  max-width: 360px;
+}
+.rs-card {
+  position: relative;
+  display: block;
+  text-decoration: none; color: #fff;
+  padding: 18px 18px 16px;
+  border-radius: 22px;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.14);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.22), 0 16px 40px rgba(0,0,0,0.35);
+  animation: rsBob 4.4s ease-in-out infinite;
+}
+.rs-card:nth-child(2) { animation-delay: 0.4s; }
+.rs-card:nth-child(3) { animation-delay: 0.9s; }
+@keyframes rsBob {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.rs-neon {
+  position: absolute; inset: -14px; z-index: -1; border-radius: 28px;
+  background: linear-gradient(135deg, #00D9FF, #7B61FF);
+  filter: blur(22px); opacity: 0.45;
+  animation: rsGlow 2.5s ease-in-out infinite;
+}
+@keyframes rsGlow {
+  0%,100% { opacity: 0.35; transform: scale(0.96); }
+  50% { opacity: 0.7; transform: scale(1.05); }
+}
+.rs-card strong { display: block; font-size: 1.05rem; color: #9af6ff; }
+.rs-card small { display: block; margin-top: 6px; font-size: 0.82rem; color: rgba(255,255,255,0.78); }
+.rs-live {
+  position: absolute; top: 18px; right: 16px;
+  width: 8px; height: 8px; border-radius: 50%; background: #22c55e;
+  box-shadow: 0 0 0 0 rgba(34,197,94,.6);
+  animation: rsPing 1.5s infinite;
+}
+@keyframes rsPing { 70% { box-shadow: 0 0 0 8px transparent; } }
+.rs-bar {
+  display: block; height: 4px; margin-top: 12px; border-radius: 99px;
+  background: linear-gradient(90deg, #00D9FF, #7B61FF);
+}
+@media (min-width: 760px) {
+  .rs-scene { padding: 36px 28px 40px; min-height: 460px; }
+  .rs-cards { flex-direction: row; max-width: none; gap: 20px; }
+  .rs-card { flex: 1; min-width: 0; }
+}

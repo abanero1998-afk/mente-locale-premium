@@ -1,3 +1,6 @@
+import RistoScene from './RistoScene';
+import './risto-scene.css';
+
 const WA = 'https://wa.me/393444106229?text=' + encodeURIComponent('Ciao, voglio Ristoranti e Locali');
 
 export const metadata = {
@@ -56,6 +59,10 @@ export default function Page() {
           <div className="kpi-pill liquid-glass"><span className="kpi-val">7gg</span><span className="kpi-sub">live</span></div>
         </div>
       </section>
+
+      <div className="products-section">
+        <RistoScene />
+      </div>
 
       <section className="products-section">
         <h2 className="section-title">Ristorazione</h2>

@@ -1,2 +1,2 @@
-const LOGO = '/logo-mente-locale.svg?v=3';
+const LOGO = '/logo-mente-locale.svg';
 export default LOGO;

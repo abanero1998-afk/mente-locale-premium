@@ -1,16 +1,15 @@
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
-const dots = Array.from({ length: 28 }, (_, i) => ({
+const DOTS = Array.from({ length: 36 }, (_, i) => ({
   id: i,
-  x: (i * 37) % 100,
-  y: (i * 53) % 100,
+  x: (i * 29 + 7) % 100,
+  y: (i * 17 + 4) % 92,
   s: 2 + (i % 5),
-  d: 4 + (i % 8),
-  c: i % 2 ? '#00D9FF' : '#7B61FF',
-  o: 0.2 + (i % 5) * 0.08,
+  d: 4 + (i % 7),
+  c: i % 2 ? '#00D9FF' : '#b197ff',
 }));
 
 export default function RistoScene() {
@@ -20,29 +19,6 @@ export default function RistoScene() {
     return () => clearInterval(t);
   }, []);
 
-  const cards = useMemo(
-    () => [
-      {
-        href: '/ristorazione/sala',
-        title: 'Prenotazioni',
-        lines: ['Stasera · 19:30 · Tavolo per 2'],
-        live: true,
-      },
-      {
-        href: '/ristorazione/carta',
-        title: 'Menu Vivo',
-        lines: [`Pasta Tartufo · €${price}`, 'Wagyu · €64'],
-      },
-      {
-        href: '/ristorazione/kds',
-        title: 'Ordina Online',
-        lines: ['Delivery 25-35 min · Gratis'],
-        bar: true,
-      },
-    ],
-    [price]
-  );
-
   return (
     <section className="rs-scene">
       <div className="rs-aurora a1" />
@@ -51,7 +27,7 @@ export default function RistoScene() {
       <div className="rs-smoke sm2" />
       <div className="rs-smoke sm3" />
       <div className="rs-vignette" />
-      {dots.map((p) => (
+      {DOTS.map((p) => (
         <span
           key={p.id}
           className="rs-dot"
@@ -61,8 +37,8 @@ export default function RistoScene() {
             width: p.s,
             height: p.s,
             background: p.c,
-            opacity: p.o,
             animationDuration: p.d + 's',
+            animationDelay: (p.id % 5) * 0.35 + 's',
           }}
         />
       ))}
@@ -71,33 +47,54 @@ export default function RistoScene() {
         <motion.h2
           initial={{ clipPath: 'inset(0 100% 0 0)', opacity: 0 }}
           animate={{ clipPath: 'inset(0 0% 0 0)', opacity: 1 }}
-          transition={{ duration: 0.9, delay: 0.15 }}
+          transition={{ duration: 0.85 }}
         >
           Ristoranti e <em>Locali</em>
         </motion.h2>
         <p>Il sistema che trasforma tavoli vuoti in incasso garantito</p>
       </div>
 
-      <div className="rs-cards">
-        {cards.map((c, i) => (
-          <motion.a
-            key={c.title}
-            href={c.href}
-            className="rs-card"
-            initial={{ y: 80, opacity: 0, rotateX: 22, filter: 'blur(12px)' }}
-            animate={{ y: 0, opacity: 1, rotateX: 0, filter: 'blur(0px)' }}
-            transition={{ type: 'spring', damping: 16, delay: 0.35 + i * 0.15 }}
-          >
-            <span className="rs-neon" />
-            <strong>{c.title}</strong>
-            {c.lines.map((l) => (
-              <small key={l}>{l}</small>
-            ))}
-            {c.live && <i className="rs-live" />}
-            {c.bar && <span className="rs-bar" />}
-          </motion.a>
-        ))}
+      <div className="rs-stack">
+        <GlassCard href="/ristorazione/sala" delay={0.35} className="c1" live>
+          <span className="ico">▣</span>
+          <div>
+            <strong>Prenotazioni</strong>
+            <small>Stasera · 19:30 · Tavolo per 2</small>
+          </div>
+        </GlassCard>
+        <GlassCard href="/ristorazione/carta" delay={0.5} className="c2">
+          <span className="ico">☰</span>
+          <div>
+            <strong>Menu</strong>
+            <small>Pasta Tartufo · €{price}</small>
+            <small>Wagyu · €64</small>
+          </div>
+        </GlassCard>
+        <GlassCard href="/ristorazione/kds" delay={0.65} className="c3">
+          <span className="ico">▦</span>
+          <div>
+            <strong>Ordina Online</strong>
+            <small>Delivery 25-35 min · Gratis</small>
+            <i className="rs-bar" />
+          </div>
+        </GlassCard>
       </div>
     </section>
+  );
+}
+
+function GlassCard({ href, delay, className, live, children }) {
+  return (
+    <motion.a
+      href={href}
+      className={'rs-glass ' + className}
+      initial={{ y: 90, opacity: 0, rotateX: 24, filter: 'blur(16px)' }}
+      animate={{ y: 0, opacity: 1, rotateX: 0, filter: 'blur(0px)' }}
+      transition={{ type: 'spring', damping: 16, delay }}
+    >
+      <span className="rs-neon" />
+      {live && <i className="rs-live" />}
+      {children}
+    </motion.a>
   );
 }

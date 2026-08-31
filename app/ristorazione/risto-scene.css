@@ -2,117 +2,125 @@
   position: relative;
   overflow: hidden;
   border-radius: 28px;
-  margin: 8px 0 36px;
-  padding: 28px 16px 32px;
-  min-height: 420px;
-  background: rgba(5,7,10,0.35);
+  margin: 0 0 36px;
+  padding: 24px 16px 28px;
+  min-height: 560px;
+  background: rgba(5,7,10,0.28);
   border: 1px solid rgba(255,255,255,0.08);
 }
-.rs-aurora {
-  position: absolute; border-radius: 50%; pointer-events: none; z-index: 0;
-}
+.rs-aurora { position: absolute; border-radius: 50%; pointer-events: none; z-index: 0; }
 .rs-aurora.a1 {
-  width: 280px; height: 280px; top: 8%; left: 8%;
-  background: #00D9FF; filter: blur(90px); opacity: 0.38;
+  width: 320px; height: 320px; top: 6%; left: 10%;
+  background: #00D9FF; filter: blur(110px); opacity: 0.42;
   animation: rsMove 12s ease-in-out infinite;
 }
 .rs-aurora.a2 {
-  width: 320px; height: 320px; bottom: 0; right: -40px;
-  background: #7B61FF; filter: blur(100px); opacity: 0.34;
+  width: 380px; height: 380px; bottom: -40px; right: -60px;
+  background: #7B61FF; filter: blur(120px); opacity: 0.4;
   animation: rsMove 15s ease-in-out infinite reverse;
 }
 @keyframes rsMove {
   0%,100% { transform: translate(0,0) scale(1); }
-  50% { transform: translate(40px,-24px) scale(1.12); }
+  50% { transform: translate(36px,-22px) scale(1.12); }
 }
 .rs-smoke {
   position: absolute; border-radius: 50%; pointer-events: none;
-  filter: blur(34px); mix-blend-mode: screen; z-index: 1;
+  filter: blur(36px); mix-blend-mode: screen; z-index: 1;
 }
-.rs-smoke.sm1 { width: 180px; height: 180px; left: 12%; top: 30%; background: radial-gradient(circle,#00D9FF,transparent 70%); animation: rsMove 9s ease-in-out infinite; }
-.rs-smoke.sm2 { width: 220px; height: 220px; right: 6%; top: 22%; background: radial-gradient(circle,#7B61FF,transparent 70%); animation: rsMove 11s ease-in-out infinite reverse; }
-.rs-smoke.sm3 { width: 140px; height: 140px; left: 40%; bottom: 8%; background: radial-gradient(circle,rgba(0,217,255,.7),transparent 70%); animation: rsMove 8s ease-in-out infinite; }
+.rs-smoke.sm1 { width: 200px; height: 200px; left: 14%; top: 28%; background: radial-gradient(circle,#00D9FF,transparent 70%); animation: rsMove 9s ease-in-out infinite; }
+.rs-smoke.sm2 { width: 240px; height: 240px; right: 8%; top: 18%; background: radial-gradient(circle,#7B61FF,transparent 70%); animation: rsMove 11s ease-in-out infinite reverse; }
+.rs-smoke.sm3 { width: 160px; height: 160px; left: 42%; bottom: 10%; background: radial-gradient(circle,rgba(0,217,255,.75),transparent 70%); animation: rsMove 8s ease-in-out infinite; }
 .rs-vignette {
   position: absolute; inset: 0; z-index: 1; pointer-events: none;
-  background: radial-gradient(ellipse at center, transparent 40%, rgba(5,7,10,0.55) 100%);
+  background: radial-gradient(ellipse at center, transparent 35%, rgba(5,7,10,0.55) 100%);
 }
 .rs-dot {
   position: absolute; border-radius: 50%; z-index: 2; pointer-events: none;
-  filter: blur(0.4px);
+  opacity: 0.45; filter: blur(0.4px);
   animation: rsFloat 6s ease-in-out infinite;
 }
-@keyframes rsFloat {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-14px); }
-}
-.rs-head { position: relative; z-index: 3; text-align: left; margin-bottom: 22px; }
+@keyframes rsFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-16px); } }
+.rs-head { position: relative; z-index: 4; margin-bottom: 8px; }
 .rs-head h2 {
-  margin: 0;
-  font-family: Outfit, Inter, sans-serif;
-  font-size: clamp(1.7rem, 7vw, 2.5rem);
-  font-weight: 800;
-  letter-spacing: -0.03em;
+  margin: 0; font-family: Outfit, Inter, sans-serif;
+  font-size: clamp(1.7rem, 7vw, 2.6rem); font-weight: 800; letter-spacing: -0.03em;
 }
 .rs-head h2 em {
   font-style: normal;
-  background: linear-gradient(90deg, #00D9FF, #7B61FF);
+  background: linear-gradient(90deg,#00D9FF,#7B61FF);
   -webkit-background-clip: text; background-clip: text; color: transparent;
 }
-.rs-head p {
-  margin: 8px 0 0;
-  color: rgba(255,255,255,0.62);
-  font-size: 0.95rem;
-  max-width: 420px;
+.rs-head p { margin: 8px 0 0; color: rgba(255,255,255,0.62); font-size: 0.95rem; max-width: 420px; }
+.rs-stack {
+  position: relative; z-index: 4;
+  min-height: 380px;
+  margin-top: 12px;
 }
-.rs-cards {
-  position: relative; z-index: 3;
-  display: flex; flex-direction: column; gap: 16px;
-  max-width: 360px;
-}
-.rs-card {
-  position: relative;
-  display: block;
+.rs-glass {
+  position: absolute;
+  width: min(78%, 240px);
+  display: flex; gap: 10px; align-items: flex-start;
   text-decoration: none; color: #fff;
-  padding: 18px 18px 16px;
-  border-radius: 22px;
-  background: rgba(255,255,255,0.07);
-  border: 1px solid rgba(255,255,255,0.14);
-  backdrop-filter: blur(22px);
-  -webkit-backdrop-filter: blur(22px);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.22), 0 16px 40px rgba(0,0,0,0.35);
-  animation: rsBob 4.4s ease-in-out infinite;
+  padding: 16px 16px 14px;
+  border-radius: 26px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(0,217,255,0.38);
+  backdrop-filter: blur(22px) saturate(160%);
+  -webkit-backdrop-filter: blur(22px) saturate(160%);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.28), 0 18px 40px rgba(0,0,0,0.35);
+  animation: rsBob 4.6s ease-in-out infinite;
 }
-.rs-card:nth-child(2) { animation-delay: 0.4s; }
-.rs-card:nth-child(3) { animation-delay: 0.9s; }
+.rs-glass.c1 { top: 18px; left: 4px; animation-delay: 0s; }
+.rs-glass.c2 { top: 132px; right: 2px; left: auto; animation-delay: 0.5s; }
+.rs-glass.c3 { top: 262px; left: 18px; animation-delay: 1s; }
 @keyframes rsBob {
   0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+  50% { transform: translateY(-10px); }
 }
 .rs-neon {
-  position: absolute; inset: -14px; z-index: -1; border-radius: 28px;
-  background: linear-gradient(135deg, #00D9FF, #7B61FF);
-  filter: blur(22px); opacity: 0.45;
+  position: absolute; inset: -16px; z-index: -1; border-radius: 32px;
+  background: linear-gradient(135deg,#00D9FF,#7B61FF);
+  filter: blur(20px); opacity: 0.48;
   animation: rsGlow 2.5s ease-in-out infinite;
 }
 @keyframes rsGlow {
-  0%,100% { opacity: 0.35; transform: scale(0.96); }
-  50% { opacity: 0.7; transform: scale(1.05); }
+  0%,100% { opacity: 0.32; transform: scale(0.96); }
+  50% { opacity: 0.72; transform: scale(1.06); }
 }
-.rs-card strong { display: block; font-size: 1.05rem; color: #9af6ff; }
-.rs-card small { display: block; margin-top: 6px; font-size: 0.82rem; color: rgba(255,255,255,0.78); }
+.rs-glass .ico {
+  flex-shrink: 0; width: 28px; height: 28px; border-radius: 8px;
+  display: grid; place-items: center;
+  color: #7ef3ff; font-size: 13px;
+  background: rgba(0,217,255,0.12); border: 1px solid rgba(0,217,255,0.25);
+}
+.rs-glass strong { display: block; font-size: 0.98rem; color: #9af6ff; }
+.rs-glass small { display: block; margin-top: 4px; font-size: 0.75rem; color: rgba(255,255,255,0.78); }
 .rs-live {
-  position: absolute; top: 18px; right: 16px;
+  position: absolute; top: 14px; right: 14px;
   width: 8px; height: 8px; border-radius: 50%; background: #22c55e;
-  box-shadow: 0 0 0 0 rgba(34,197,94,.6);
+  box-shadow: 0 0 0 0 rgba(34,197,94,.55);
   animation: rsPing 1.5s infinite;
 }
 @keyframes rsPing { 70% { box-shadow: 0 0 0 8px transparent; } }
 .rs-bar {
-  display: block; height: 4px; margin-top: 12px; border-radius: 99px;
-  background: linear-gradient(90deg, #00D9FF, #7B61FF);
+  display: block; height: 3px; margin-top: 10px; border-radius: 99px;
+  background: linear-gradient(90deg,#00D9FF,#7B61FF);
 }
+.prod-demo {
+  margin-top: 12px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: #05070A;
+  height: 220px;
+}
+.prod-demo iframe { width: 100%; height: 220px; border: 0; }
 @media (min-width: 760px) {
-  .rs-scene { padding: 36px 28px 40px; min-height: 460px; }
-  .rs-cards { flex-direction: row; max-width: none; gap: 20px; }
-  .rs-card { flex: 1; min-width: 0; }
+  .rs-scene { min-height: 620px; padding: 32px 28px; }
+  .rs-stack { min-height: 440px; }
+  .rs-glass { width: 250px; }
+  .rs-glass.c1 { left: 8%; top: 24px; }
+  .rs-glass.c2 { right: 10%; top: 140px; }
+  .rs-glass.c3 { left: 22%; top: 280px; }
+  .prod-demo, .prod-demo iframe { height: 280px; }
 }

@@ -5,59 +5,47 @@ const WA = 'https://wa.me/393444106229?text=' + encodeURIComponent('Ciao, voglio
 
 export const metadata = {
   title: 'Ristoranti e Locali | Mente Locale',
-  description: 'Sala live, carta QR, KDS cucina+bar, magazzino IA e HACCP Pro. Personalizzato sul tuo locale.',
+  description: 'Sala live, carta QR, KDS cucina+bar, magazzino IA e HACCP Pro.',
 };
 
 const modules = [
   {
     href: '/ristorazione/sala',
+    demo: '/ristorazione/sala-live.html',
     kicker: '01 · Sala',
     title: 'SALA LIVE',
     tag: 'Controlli 22 tavoli dal telefono. Senza urlare.',
-    items: ['Planimetria glass 22 tavoli', 'VIP / conto / occupato live', 'Analytics vendite in sala'],
   },
   {
     href: '/ristorazione/carta',
+    demo: '/ristorazione/carta-viva.html',
     kicker: '02 · Menu',
     title: 'CARTA VIVA',
     tag: 'Cambi un prezzo in 10 secondi. Senza ristampare.',
-    items: ['QR flip 3D → menu', 'Prezzo e lingue live', 'Push carta aggiornata'],
   },
   {
     href: '/ristorazione/kds',
+    demo: '/ristorazione/kds.html',
     kicker: '03 · Cucina',
     title: 'KDS CUCINA + BAR',
     tag: 'Comanda dal tavolo → cucina + bar in 0.3s. Zero carta.',
-    items: ['Tablet cucina + display bar', 'Allergie e ritorni', 'Pronto con pass al bar'],
   },
   {
     href: '/ristorazione/magazzino',
+    demo: '/ristorazione/magazzino.html',
     kicker: '04 · Compliance',
     title: 'MAGAZZINO + HACCP',
     tag: 'Sa che finirai il Monfortino prima di te. E ti salva dal NAS.',
-    items: ['Stock IA e food cost', 'Termometro e checklist', 'PDF automatici'],
   },
-];
-
-const reviews = [
-  { text: 'In 11 giorni i tavoli del venerdì sono sempre pieni. Zero sbatti con le comande.', name: 'Marco', role: 'Trattoria del Borgo' },
-  { text: 'Le comande digitali ci hanno tolto 2 ore di lavoro al giorno. La cucina ringrazia.', name: 'Laura', role: 'Osteria 12' },
-  { text: 'I no-show sono quasi spariti grazie ai reminder WhatsApp. Valeva ogni centesimo.', name: 'Andrea', role: 'Ristorante Il Giardino' },
 ];
 
 export default function Page() {
   return (
     <main className="service-page service-ristoranti">
-      <section className="service-hero">
+      <section className="service-hero" style={{ paddingBottom: 12 }}>
         <div className="badge liquid-glass">Ristoranti e Locali</div>
         <h1>Tavolo sempre pieno</h1>
-        <p className="service-lead">Il sistema che trasforma tavoli vuoti in incasso garantito. Il cliente inquadra, ordina, paga. La cucina riceve la comanda pulita.</p>
-        <div className="kpi-pills service-kpis">
-          <div className="kpi-pill liquid-glass"><span className="kpi-val">+30%</span><span className="kpi-sub">coperti</span></div>
-          <div className="kpi-pill liquid-glass"><span className="kpi-val">−80%</span><span className="kpi-sub">no-show</span></div>
-          <div className="kpi-pill liquid-glass"><span className="kpi-val">0</span><span className="kpi-sub">errori</span></div>
-          <div className="kpi-pill liquid-glass"><span className="kpi-val">7gg</span><span className="kpi-sub">live</span></div>
-        </div>
+        <p className="service-lead">Il sistema che trasforma tavoli vuoti in incasso garantito.</p>
       </section>
 
       <div className="products-section">
@@ -71,30 +59,15 @@ export default function Page() {
         </p>
         <div className="products-grid">
           {modules.map((p) => (
-            <a key={p.href} href={p.href} className="product-card liquid-glass" style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}>
+            <article key={p.href} className="product-card liquid-glass">
               <p className="rd-kicker">{p.kicker}</p>
               <h3>{p.title}</h3>
               <p>{p.tag}</p>
-              <ul>
-                {p.items.map((it) => (
-                  <li key={it}>{it}</li>
-                ))}
-              </ul>
-              <span className="v-more">Apri il modulo →</span>
-            </a>
-          ))}
-        </div>
-      </section>
-
-      <section className="reviews-section">
-        <h2 className="section-title">Cosa dicono i ristoratori</h2>
-        <div className="reviews-grid">
-          {reviews.map((r) => (
-            <blockquote key={r.name} className="review-card liquid-glass">
-              <div className="stars">★★★★★</div>
-              <p>“{r.text}”</p>
-              <footer><strong>{r.name}</strong><span>{r.role}</span></footer>
-            </blockquote>
+              <div className="prod-demo">
+                <iframe src={p.demo} title={p.title} loading="lazy" />
+              </div>
+              <a href={p.href} className="v-more">Apri la demo →</a>
+            </article>
           ))}
         </div>
       </section>

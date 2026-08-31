@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import LOGO from './logo-data';
 
-const WA = 'https://wa.me/393444106229?text=' + encodeURIComponent('Ciao, voglio prenotare l onboarding in 24h');
+const WA = 'https://wa.me/393444106229?text=' + encodeURIComponent("Ciao, voglio prenotare l'onboarding in 24h");
 const IG = 'https://www.instagram.com/smart.srls.ia';
 const TT = 'https://www.tiktok.com/@mente.locale0';
 const FB = 'https://www.facebook.com/share/19Q1m2xxHx/?mibextid=wwXIfr';
@@ -96,7 +96,7 @@ export default function HeroCard() {
             <a className="sq web" href={SITE} target="_blank" rel="noreferrer">Sito</a>
           </div>
         </div>
-        <a className="wa-prive" href={WA} target="_blank" rel="noreferrer">WhatsApp Privé</a>
+        <a className="wa-prive" href={WA} target="_blank" rel="noreferrer">WhatsApp privato</a>
       </section>
     </>
   );

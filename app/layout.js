@@ -26,6 +26,12 @@ export default function RootLayout({ children }) {
             <a href="/" className="logo-link" aria-label="Mente Locale home">
               <img src={LOGO} alt="Mente Locale" className="logo-img" width={200} height={64} />
             </a>
+            <div className="nav-links">
+              <a href="/ristorazione">Ristorazione</a>
+              <a href="/parrucchieri">Parrucchieri</a>
+              <a href="/ferramenta">Ferramenta</a>
+              <a href="/servizi">Servizi</a>
+            </div>
             <a className="wa-prive nav-prive" href={WA} target="_blank" rel="noreferrer">
               WhatsApp privato
             </a>

@@ -32,7 +32,7 @@ const modules = [
   },
   {
     href: '/ristorazione/magazzino',
-    demo: '/ristorazione/magazzino.html',
+    demo: '/ristorazione/magazzino-haccp.html',
     kicker: '04 · Compliance',
     title: 'MAGAZZINO + HACCP',
     tag: 'Sa che finirai il Monfortino prima di te. E ti salva dal NAS.',
@@ -60,7 +60,7 @@ export default function Page() {
       </div>
 
       <section className="products-section">
-        <h2 className="section-title">Ristorazione</h2>
+        <h2 className="section-title">Moduli ristorazione</h2>
         <p className="service-lead" style={{ marginTop: 8, maxWidth: 640 }}>
           Personalizziamo ogni dettaglio sul tuo locale: è quello che fa la differenza.
         </p>

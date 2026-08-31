@@ -3,15 +3,6 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
-const DOTS = Array.from({ length: 36 }, (_, i) => ({
-  id: i,
-  x: (i * 29 + 7) % 100,
-  y: (i * 17 + 4) % 92,
-  s: 2 + (i % 5),
-  d: 4 + (i % 7),
-  c: i % 2 ? '#00D9FF' : '#b197ff',
-}));
-
 export default function RistoScene() {
   const [price, setPrice] = useState(28);
   useEffect(() => {
@@ -21,28 +12,6 @@ export default function RistoScene() {
 
   return (
     <section className="rs-scene">
-      <div className="rs-aurora a1" />
-      <div className="rs-aurora a2" />
-      <div className="rs-smoke sm1" />
-      <div className="rs-smoke sm2" />
-      <div className="rs-smoke sm3" />
-      <div className="rs-vignette" />
-      {DOTS.map((p) => (
-        <span
-          key={p.id}
-          className="rs-dot"
-          style={{
-            left: p.x + '%',
-            top: p.y + '%',
-            width: p.s,
-            height: p.s,
-            background: p.c,
-            animationDuration: p.d + 's',
-            animationDelay: (p.id % 5) * 0.35 + 's',
-          }}
-        />
-      ))}
-
       <div className="rs-head">
         <motion.h2
           initial={{ opacity: 0, y: 12 }}

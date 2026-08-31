@@ -18,44 +18,17 @@ export default function RootLayout({ children }) {
     <html lang="it">
       <body>
         <div className="bg-scene" />
-
         <header className="nav-wrap">
           <nav className="nav liquid-glass">
             <a href="/" className="logo-link" aria-label="Mente Locale home">
-              <img
-                src={LOGO}
-                alt="Mente Locale"
-                className="logo-img"
-                width={200}
-                height={64}
-              />
+              <img src={LOGO} alt="Mente Locale" className="logo-img" width={200} height={64} />
             </a>
-            <ul className="nav-links">
-              <li><a href="/come-funziona">Come funziona</a></li>
-              <li><a href="/servizi">Servizi</a></li>
-              <li><a href="/faq">FAQ</a></li>
-              <li><a href="/casi-studio">Case study</a></li>
-              <li><a href="/contatti">Chi siamo</a></li>
-            </ul>
-            <div className="nav-socials">
-              <a className="nav-icon-btn liquid-glass" href={WA} target="_blank" rel="noreferrer" aria-label="WhatsApp">
-                <img src="/icons/whatsapp.svg" alt="" width={40} height={40} />
-              </a>
-              <a className="nav-icon-btn liquid-glass" href={IG} target="_blank" rel="noreferrer" aria-label="Instagram">
-                <img src="/icons/instagram.svg" alt="" width={40} height={40} />
-              </a>
-              <a className="nav-icon-btn liquid-glass" href={TT} target="_blank" rel="noreferrer" aria-label="TikTok">
-                <img src="/icons/tiktok.svg" alt="" width={40} height={40} />
-              </a>
-              <a className="nav-icon-btn liquid-glass" href={FB} target="_blank" rel="noreferrer" aria-label="Facebook">
-                <img src="/icons/facebook.svg" alt="" width={40} height={40} />
-              </a>
-            </div>
+            <a className="wa-prive nav-prive" href={WA} target="_blank" rel="noreferrer">
+              WhatsApp Privé
+            </a>
           </nav>
         </header>
-
         {children}
-
         <footer>
           <div className="socials">
             <a className="social-icon liquid-glass" href={WA} target="_blank" rel="noreferrer" aria-label="WhatsApp">

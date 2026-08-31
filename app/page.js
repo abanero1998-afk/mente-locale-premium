@@ -1,3 +1,5 @@
+import HeroCard from './HeroCard';
+
 const WA = 'https://wa.me/393444106229?text=' + encodeURIComponent('Ciao, voglio prenotare l onboarding in 24h');
 
 const kpis = [
@@ -34,9 +36,10 @@ const verticals = [
 export default function Home() {
   return (
     <main className="home-b">
+      <HeroCard />
+
       <section className="hero-b">
         <div className="hero-b-left">
-          <div className="badge liquid-glass">Onboarding 24h · Risultati garantiti</div>
           <h1>
             PIÙ CLIENTI
             <br />

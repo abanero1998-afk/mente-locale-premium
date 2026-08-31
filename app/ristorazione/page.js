@@ -1,3 +1,4 @@
+import RistoBg from './RistoBg';
 import RistoScene from './RistoScene';
 import './risto-scene.css';
 
@@ -42,6 +43,7 @@ const modules = [
 export default function Page() {
   return (
     <main className="service-page service-ristoranti">
+      <RistoBg />
       <section className="service-hero" style={{ paddingBottom: 12 }}>
         <div className="badge liquid-glass">Ristoranti e Locali</div>
         <h1>Tavolo sempre pieno</h1>

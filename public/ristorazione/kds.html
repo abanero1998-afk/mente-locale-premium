@@ -1,0 +1,32 @@
+<!DOCTYPE html><html lang="it"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>KDS</title><script src="https://cdn.tailwindcss.com"></script><script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js"></script><script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js"></script><script src="https://unpkg.com/framer-motion@11.11.17/dist/framer-motion.dev.js"></script><script src="https://unpkg.com/@babel/standalone/babel.min.js"></script><style>html,body{margin:0;background:#05070A;color:#fff}.g{background:rgba(8,10,16,.7);border:1px solid rgba(0,217,255,.16)}</style></head><body><div id="root"></div><script type="text/babel">
+const {useState}=React;const {motion,AnimatePresence}=Motion;
+function App(){
+ const [k,setK]=useState([{id:'t07',table:'T07',item:'x2 Risotto Tartufo',st:'new',ok:true},{id:'t11',table:'T11',item:'x1 Burger no cipolla',st:'new',ok:false}]);
+ const [serve,setServe]=useState(null);
+ const ready=(id)=>{const o=k.find(x=>x.id===id);setK(p=>p.filter(x=>x.id!==id));if(o)setServe(o.table);};
+ return (<section className="min-h-screen p-6 max-w-6xl mx-auto">
+ <h1 className="text-4xl font-bold">KDS — LA CUCINA NON SBAGLIA PIÙ</h1>
+ <p className="text-white/60 mt-2">Comanda dal tavolo → cucina + bar in 0.3s. Zero carta.</p>
+ <div className="text-[10px] font-mono text-cyan-300 mt-6 tracking-widest">SALA → CUCINA → BAR</div>
+ <div className="grid lg:grid-cols-5 gap-6 mt-6">
+ <div className="lg:col-span-3 rounded-[2rem] p-3" style={{boxShadow:'0 0 0 1px #00D9FF88'}}>
+ <div className="g rounded-2xl p-4 min-h-[420px]">
+ <div className="font-bold mb-3">Tablet cucina</div>
+ <AnimatePresence>{k.map(o=>(<motion.div layout key={o.id} exit={{y:-60,opacity:0}} className={`rounded-2xl p-3 mb-3 border ${o.ok?'border-white/10':'border-yellow-400 bg-yellow-400/10'} ${o.st==='prep'?'bg-violet-500/20 border-violet-400':''}`}>
+ <div className="flex justify-between"><b>{o.table}</b>{!o.ok&&<span className="text-[10px] bg-yellow-400 text-black px-2 rounded">Allergia</span>}</div>
+ <div className="text-sm mt-1">{o.item}</div>
+ <div className="flex gap-2 mt-3">
+ {o.st==='new'&&<button className="flex-1 rounded-xl py-2 bg-white/10 text-xs" onClick={()=>setK(p=>p.map(x=>x.id===o.id?{...x,st:'prep'}:x))}>In preparazione</button>}
+ <button className="flex-1 rounded-xl py-2 bg-cyan-400/20 text-cyan-300 text-xs" onClick={()=>ready(o.id)}>Pronto</button>
+ </div></motion.div>))}</AnimatePresence>
+ <div className="rounded-2xl border border-red-500/40 bg-red-500/10 p-3 mt-4"><div className="text-[11px] text-red-400 font-bold">RITORNI</div>T03 Risotto troppo salato</div>
+ </div></div>
+ <div className="lg:col-span-2 rounded-[1.6rem] p-3" style={{boxShadow:'0 0 0 1px #7B61FF88'}}>
+ <div className="g rounded-2xl p-4 min-h-[320px]"><div className="font-bold mb-3">Display bar</div>
+ {serve && <div className="rounded-xl border border-cyan-400/40 bg-cyan-400/10 p-3 mb-3">Servire {serve}</div>}
+ <div className="text-sm text-white/70">T07 Negroni x2</div>
+ <div className="text-sm text-white/70 mt-2">T11 Spritz</div>
+ </div></div></div></section>);
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script></body></html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html><html lang="it"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Magazzino HACCP</title><script src="https://cdn.tailwindcss.com"></script><script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js"></script><script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js"></script><script src="https://unpkg.com/@babel/standalone/babel.min.js"></script><style>html,body{margin:0;background:#05070A;color:#fff}.g{background:rgba(255,255,255,.05);border:1px solid rgba(0,217,255,.14);border-radius:24px;padding:16px}</style></head><body><div id="root"></div><script type="text/babel">
+const {useState,useEffect}=React;
+function App(){
+ const [tab,setTab]=useState('mag'),[price,setPrice]=useState(32),[temp,setTemp]=useState(3.2),[hot,setHot]=useState(false);
+ useEffect(()=>{const id=setInterval(()=>setTemp(t=>+(Math.max(1.5,Math.min(hot?7.2:4.1,t+(Math.random()-.5)*.3))).toFixed(2)),400);return ()=>clearInterval(id);},[hot]);
+ const m=Math.round((1-4.4/price)*100);
+ return (<section className="min-h-screen p-6 max-w-5xl mx-auto">
+ <h1 className="text-4xl font-bold">MAGAZZINO + HACCP</h1>
+ <p className="text-white/60 mt-2">Sa che finirai il Monfortino prima di te. E ti salva dal NAS.</p>
+ <div className="flex gap-2 mt-6">{[['mag','Magazzino IA'],['h','HACCP Pro']].map(([k,l])=>(<button key={k} onClick={()=>setTab(k)} className={`px-4 py-2 rounded-full ${tab===k?'bg-cyan-400 text-black':'border border-white/15'}`}>{l}</button>))}</div>
+ {tab==='mag'?(<div className="grid md:grid-cols-2 gap-4 mt-6">
+ <div className="g"><div className="font-bold">Monfortino 2018</div><div className="text-sm text-white/50">3 bt · Scaffale C3</div><div className="text-violet-300 text-sm mt-2">IA: Ordina 6, +40% richiesta</div><div className="h-1.5 bg-white/10 rounded-full mt-2"><div className="h-full w-2/5 bg-gradient-to-r from-violet-500 to-cyan-300 rounded-full"/></div></div>
+ <div className="g"><div className="font-bold">Risotto Oro</div><div className="text-sm">Riso €0.80 + Zafferano €2.10 + Oro €1.50 = €4.40</div><div className="mt-2">Vendita <b className="text-cyan-300">€{price}</b> · Margine {m}%</div><button className="mt-3 rounded-xl px-3 py-2 bg-violet-500/30" onClick={()=>setPrice(38)}>IA suggerisce €38</button></div>
+ <div className="g border-red-500/40 bg-red-500/10 md:col-span-2">Tartufo 0.8kg — copre 12 coperti — Ordina domani</div>
+ </div>):(<div className="grid md:grid-cols-2 gap-4 mt-6">
+ <div className="g">Frigo +4°C {temp>5?'ROSSO':'OK verde'}<br/>Abbattitore −18°C OK<br/>Scadenze: 2 in giallo</div>
+ <div className={`g ${temp>5?'border-red-500 text-red-400':''}`}>Frigo cucina <div className="text-4xl font-mono">{temp.toFixed(1)}°C</div>
+ <button className="mt-2 text-xs border border-white/20 rounded-full px-3 py-1" onClick={()=>setHot(v=>!v)}>{hot?'Ripristina':'Simula spike NAS'}</button></div>
+ <div className="g md:col-span-2 text-sm">20:32 — Rossi ha registrato temp. Frigo — Conforme<br/>Alert: Lotto Mozzarella 12/06 scade domani</div>
+ </div>)}
+ </section>);
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script></body></html>

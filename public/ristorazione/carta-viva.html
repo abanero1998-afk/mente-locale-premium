@@ -1,0 +1,36 @@
+<!DOCTYPE html><html lang="it"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Carta Viva</title><script src="https://cdn.tailwindcss.com"></script><script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js"></script><script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js"></script><script src="https://unpkg.com/framer-motion@11.11.17/dist/framer-motion.dev.js"></script><script src="https://unpkg.com/@babel/standalone/babel.min.js"></script><style>html,body{margin:0;background:#05070A;color:#fff}.g{background:rgba(255,255,255,.05);backdrop-filter:blur(20px);border:1px solid rgba(0,217,255,.14)}</style></head><body><div id="root"></div><script type="text/babel">
+const {useState}=React;const {motion,AnimatePresence}=Motion;
+const L={IT:{p:'Percorso Tartufo',d:'Sette portate, tartufo nero umbro.',a:'Latte · Uova · Glutine',w:'Sagrantino 2018'},EN:{p:'Truffle Journey',d:'Seven courses, Umbrian black truffle.',a:'Milk · Eggs · Gluten',w:'Sagrantino 2018'},FR:{p:'Parcours Truffe',d:'Sept services, truffe noire.',a:'Lait · Oeufs · Gluten',w:'Sagrantino 2018'}};
+function App(){
+ const [flip,setFlip]=useState(false),[price,setPrice]=useState(145),[lang,setLang]=useState('IT'),[on,setOn]=useState(true),[toast,setToast]=useState(null);
+ const t=L[lang];
+ return (<section className="min-h-screen p-6 max-w-5xl mx-auto grid lg:grid-cols-2 gap-8">
+ <div><p className="text-[11px] tracking-[0.28em] uppercase text-cyan-300">Guest</p>
+ <h1 className="text-5xl font-bold mt-2">CARTA VIVA</h1>
+ <p className="text-white/60 mt-2">Cambi un prezzo in 10 secondi. Senza ristampare.</p>
+ <div className="mx-auto mt-8 w-[280px] rounded-[2.4rem] p-2" style={{background:'#1a1a1c',boxShadow:'0 0 0 1px #00D9FF66'}}>
+ <div className="rounded-[2rem] bg-black h-[520px] overflow-hidden relative">
+ <motion.div className="absolute inset-0" animate={{rotateY:flip?180:0}} transition={{duration:.7}} style={{transformStyle:'preserve-3d'}}>
+ <div className="absolute inset-0 grid place-items-center" style={{backfaceVisibility:'hidden'}}>
+ <button onClick={()=>setFlip(true)} className="bg-white rounded-xl p-3 text-black font-mono text-xs">QR · TAP</button>
+ </div>
+ <div className="absolute inset-0 p-4 overflow-y-auto" style={{backfaceVisibility:'hidden',transform:'rotateY(180deg)'}}>
+ <button onClick={()=>setFlip(false)} className="text-cyan-300 text-xs">← QR</button>
+ <div className={on?'':'opacity-30'}><div className="text-xs text-cyan-300 mt-3">7 portate</div>
+ <div className="text-2xl font-serif">{t.p}</div>
+ <div className="text-cyan-300 font-mono text-xl">€{price}</div>
+ <p className="text-sm text-white/60 mt-2">{t.d}</p>
+ <p className="text-xs mt-2 text-yellow-300">{t.a}</p>
+ <p className="text-sm mt-2">{t.w}</p></div></div></motion.div></div></div></div>
+ <aside className="g rounded-3xl p-6 h-fit">
+ <div className="text-[11px] uppercase text-cyan-300">Admin cucina</div>
+ <div className="flex justify-between mt-3"><b className="font-mono text-2xl text-cyan-300">€{price}</b><span className="text-white/40 text-xs">145–165</span></div>
+ <input type="range" min="145" max="165" value={price} onChange={e=>setPrice(+e.target.value)} className="w-full mt-2"/>
+ <div className="flex gap-2 mt-4">{['IT','EN','FR'].map(l=>(<button key={l} onClick={()=>setLang(l)} className={`flex-1 rounded-xl py-2 ${lang===l?'bg-cyan-400 text-black':'border border-white/15'}`}>{l}</button>))}</div>
+ <button onClick={()=>setOn(v=>!v)} className="mt-4 text-sm">{on?'Disponibile':'Esaurito'} · toggle</button>
+ <button onClick={()=>{setToast('Carta aggiornata 2 min fa');setTimeout(()=>setToast(null),2000);}} className="mt-4 w-full rounded-2xl py-3 bg-gradient-to-r from-cyan-400 to-violet-500 text-black font-bold">Aggiorna</button>
+ {toast && <div className="mt-3 text-center text-sm text-cyan-300">{toast}</div>}
+ </aside></section>);
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script></body></html>

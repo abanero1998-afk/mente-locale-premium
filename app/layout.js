@@ -11,7 +11,7 @@ export const metadata = {
 };
 
 const WA = 'https://wa.me/393444106229?text=' + encodeURIComponent("Ciao, voglio prenotare l'onboarding in 24h");
-const IG = 'https://www.instagram.com/smart.srls.ia?igsi=dG1ncjl6cWhxbDBi&utm_source=qr';
+const IG = 'https://www.instagram.com/mente.locale_';
 const TT = 'https://www.tiktok.com/@mente.locale0';
 const FB = 'https://www.facebook.com/share/19Q1m2xxHx/?mibextid=wwXIfr';
 const MAIL = 'abanero1998@icloud.com';
